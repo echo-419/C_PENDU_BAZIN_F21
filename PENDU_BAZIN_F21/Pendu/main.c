@@ -21,6 +21,7 @@ int main()
         system("cls");
         Affichage(MotCacher,MotProposez,PropositionLettre, &essai);
         printf("\n Il vous reste %d essai(s)\n",essai);
+        essai=essai--;
         printf("Entrez une lettre a trouver:\n");
         scanf("%c",&PropositionLettre);
 

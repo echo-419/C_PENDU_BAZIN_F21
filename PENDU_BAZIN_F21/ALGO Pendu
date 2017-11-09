@@ -22,9 +22,11 @@ DEBUT
             DEBUT
             ECRIRE"_ "                                          //si lettre non trouver on laisse un _
             test=0
-            vie=vie-1                                           //on retitre un vie
             FIN
         FINSI
+        FINTANTQUE
+
+                
 
 FINFNCTION
 
@@ -52,6 +54,7 @@ DEBUT
         DEBUT
         Affichage(MotCacher,MotAffiche,PropositionLettre, vie)
         ECRIRE" Il vous reste ",vie," vie(s)"
+        essai=essai-1
         ECRIRE"Entrez une lettre a trouver:"
         LIRE PropositionLettre
     FINTANTQUE
