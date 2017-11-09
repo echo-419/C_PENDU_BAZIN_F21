@@ -1,0 +1,67 @@
+ALGO Pendu
+
+//BUT:Faire un pendu
+//ENTRER:Un mot mot a trouver et un lettre a rechercher
+//SORTIE: Gagner ou perdu
+
+VAR 
+    MotCacher=TABLEAU[0 A 20] DE CAR
+    MotAffiche=TABLEAU[0 A 20] DE CAR
+    CAR PropositionLettre=' ' 
+    ENTIER y=0
+    ENTIER vie=7
+
+FONCTION Affichage ( mot[], MotAffiche[], lettre, var vie)
+VAR
+    ENTIER i=-1, test=1
+DEBUT
+    TANT QUE (mot[++i]) FAIRE                                   //tant que mot[i] existe dans tous le tableau
+        SI (TestLettre(mot,lettre,&MotAffiche )=1) ALORS        
+            ECRIRE mot[i]                                       //si lettre touver affichage de la lettre
+        SINON
+            DEBUT
+            ECRIRE"_ "                                          //si lettre non trouver on laisse un _
+            test=0
+            vie=vie-1                                           //on retitre un vie
+            FIN
+        FINSI
+
+FINFNCTION
+
+FONCTION TestLettre ( mot[],  lettre,  var MotAffiche[])
+VAR
+    ENTIER i=0, test=0
+DEBUT
+    TANT QUE (mot[i]) FAIRE                                     //tant que mot[i] existe dans tous le tableau
+    SI (mot[i++] = lettre) ALORS                                //si lettre touver
+    DEBUT
+        test=1
+        MotAffiche[i]= lettre                                   //on modifie le tableau du mot proposé
+    FIN
+FINFONCTION
+
+
+DEBUT
+
+    ECRIRE"Jeu Du Pendu!"
+
+    ECRIRE"Entrez un mot a trouver:"
+    LIRE MotCacher
+    TANT QUE ((MotAffiche[y++]!= MotCacher[y++])OU(vie==0)) FAIRE 
+    //tant le mot rechercher et le mot afficher sont different ou qu'il reste des vie
+        DEBUT
+        Affichage(MotCacher,MotAffiche,PropositionLettre, vie)
+        ECRIRE" Il vous reste ",vie," vie(s)"
+        ECRIRE"Entrez une lettre a trouver:"
+        LIRE PropositionLettre
+    FINTANTQUE
+
+    SI (vie!=0) ALORS
+        ECRIRE"Vous avez Gagner !!!"
+    SINON
+        ECRIRE"Vous avez Perdu"
+    FINSI
+FIN
+    
+
+
